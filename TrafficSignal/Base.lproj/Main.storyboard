@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +14,76 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TrafficSignal" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="TdD-z9-i2H">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="trafficLight" translatesAutoresizingMaskIntoConstraints="NO" id="Hbv-b8-h3O">
+                                <rect key="frame" x="20" y="20" width="374" height="187.33333333333334"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Hbv-b8-h3O" secondAttribute="height" multiplier="2:1" id="MTG-Q5-2XP"/>
+                                    <constraint firstAttribute="width" secondItem="Hbv-b8-h3O" secondAttribute="height" multiplier="2:1" id="tFF-Mf-FC0"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qNo-vu-xsb">
+                                <rect key="frame" x="82" y="466" width="250" height="250"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="qNo-vu-xsb" secondAttribute="height" multiplier="1:1" id="kc9-0e-5tY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="35"/>
+                                <state key="normal" title="Start" backgroundImage="stopButton">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="startGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mOj-9p-zye"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bjd-e4-7sG">
+                                <rect key="frame" x="20" y="215.33333333333337" width="374" height="242.66666666666663"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Heavy" family="Avenir Next" pointSize="80"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <size key="shadowOffset" width="7" height="9"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="qNo-vu-xsb" firstAttribute="top" secondItem="bjd-e4-7sG" secondAttribute="bottom" constant="8" id="C9g-6b-EJv"/>
+                            <constraint firstItem="TdD-z9-i2H" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="I2A-ux-dp7"/>
+                            <constraint firstItem="bjd-e4-7sG" firstAttribute="top" secondItem="Hbv-b8-h3O" secondAttribute="bottom" constant="8" id="JnK-TB-Slq"/>
+                            <constraint firstItem="TdD-z9-i2H" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="MZ3-45-txQ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qNo-vu-xsb" secondAttribute="trailing" constant="82" id="ObU-CI-Gyo"/>
+                            <constraint firstItem="TdD-z9-i2H" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="YhQ-mC-O44"/>
+                            <constraint firstItem="Hbv-b8-h3O" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="gdJ-Fz-sKs"/>
+                            <constraint firstAttribute="bottom" secondItem="TdD-z9-i2H" secondAttribute="bottom" id="hI1-pf-LsD"/>
+                            <constraint firstItem="qNo-vu-xsb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="82" id="li3-rl-nfq"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Hbv-b8-h3O" secondAttribute="trailing" constant="20" id="ocn-Cp-y22"/>
+                            <constraint firstItem="bjd-e4-7sG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="oyT-AT-5U8"/>
+                            <constraint firstItem="Hbv-b8-h3O" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="txW-s1-vc4"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="qNo-vu-xsb" secondAttribute="bottom" constant="20" id="u6a-mn-cwv"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bjd-e4-7sG" secondAttribute="trailing" constant="20" id="vSN-95-DXq"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="label" destination="bjd-e4-7sG" id="VjA-q5-STi"/>
+                        <outlet property="startStopButton" destination="qNo-vu-xsb" id="ckE-jI-O59"/>
+                        <outlet property="trafficLightImage" destination="Hbv-b8-h3O" id="aCK-1A-4ZU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="140.57971014492756" y="132.88043478260872"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Background" width="1600" height="900"/>
+        <image name="stopButton" width="1000" height="1000"/>
+        <image name="trafficLight" width="1500" height="600"/>
+    </resources>
 </document>
