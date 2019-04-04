@@ -53,7 +53,7 @@ class ViewController: UIViewController {
             startTimer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
             
             startStopButton.isEnabled = false
-            startStopButton.setTitle("", for: UIControlState.normal)
+            startStopButton.setTitle("", for: UIControl.State.normal)
             
             label.text = String(scoreInt)
             
@@ -68,7 +68,7 @@ class ViewController: UIViewController {
             scoreTimer.invalidate()
             tempScore = scoreInt
             scoreInt = 0
-            startStopButton.setTitle("", for: UIControlState.normal)
+            startStopButton.setTitle("", for: UIControl.State.normal)
             label.font = label.font.withSize(80)
             
         }
@@ -93,7 +93,7 @@ class ViewController: UIViewController {
             
             scoreTimer = Timer.scheduledTimer(timeInterval: 0.0001, target: self, selector: #selector(updateScoreTimer), userInfo: nil, repeats: true)
             startStopButton.isEnabled = true
-            startStopButton.setTitle("Stop", for: UIControlState.normal)
+            startStopButton.setTitle("Stop", for: UIControl.State.normal)
             
         }
         
@@ -122,7 +122,7 @@ class ViewController: UIViewController {
                 label.text = "You Failed! Try Again !!"
             }
             startStopButton.isEnabled = true
-            startStopButton.setTitle("Restart", for: UIControlState.normal)
+            startStopButton.setTitle("Restart", for: UIControl.State.normal)
             performanceTimer.invalidate()
         }
         
